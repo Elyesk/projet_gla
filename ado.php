@@ -369,3 +369,21 @@ class Action_ADO {
 
 $info = new Action_ADO();
 $info->valider_action_ADO(19);
+
+class Connexion_ADO {
+    public $vue;
+    public $personneConnectee;
+    function identification($email,$mdp){
+	    $motDeP=$this->connection->query("SELECT Personne.mdp FROM db.Personne where Personne.email=$email");
+	    if ($mdp == $motDeP) {
+		    echo "Connection Réussie";
+		 //   return VueAccueil; faut dire que la personne accéde a l'accueil du site 
+	    }
+	    else {
+		    echo "Connexion échoué, merci de vérifier vous identifiants !";
+		    // return VueConnexion ; renvoie la personne vers l'interface connexion pour qu'il réessaye.
+	    }
+		    
+	   	
+    }
+}
