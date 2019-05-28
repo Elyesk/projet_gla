@@ -369,3 +369,38 @@ class Action_ADO {
 
 $info = new Action_ADO();
 $info->valider_action_ADO(19);
+
+class Reservation { 
+    private $idReservation;
+    private $idDocument;
+    private $idAbonne;
+    private $date_reservation;
+	
+	function __construct($data) {
+		print_r($data);
+		$this->idReservation = $data["idReservation"];
+		$this->idDocument = $data["idDocument"];
+		$this->idAbonne = $data["idAbonne"];
+		$this->date_reservation = $data["date_reservation"];
+	}
+
+
+    function getIdReservation(){
+    	return $this->idReservation;
+    }
+    function getIdDocument(){
+    	return $this->idDocument;
+    }
+    function getIdAbonne(){
+    	return $this->idAbonne;
+    }
+    function setIdAbonne($idAbonne){
+    	$this->idAbonne = $idAbonne; 
+    }
+    function getDate_reservation(){
+    	return $this->date_reservation;	
+    }
+    function setDate_reservation($date_reservation){
+    	$this->date_reservation = $date_reservation;
+    }
+}
